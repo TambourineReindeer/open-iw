@@ -1,0 +1,5 @@
+*.bat
+make.bat
+*.sh
+make.sh
+Makefile
