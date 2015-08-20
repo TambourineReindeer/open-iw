@@ -22,8 +22,8 @@ struct file_storage_s {
 	struct storage_entry_s * last;
 
 	/* Header values */
-	int		file_pos; /* The offset from after this value that the file contents are stored in the binary */
-	int		header_vals[2]; /* Two unknown values listed in the header for the file storage */
+	int		count; /* The number of files in the list */
+	int		unknown[2]; /* Two unknown values listed in the header for the file storage */
 	char	header_filename[MAX_NAME_BYTES]; /* The name of the file */
 };
 
@@ -34,7 +34,7 @@ static void free_storage_entry(struct storage_entry_s * se)
 		struct storage_entry_s * cache_se_prev = se->prev;
 		struct storage_entry_s * cache_se_next = se->next;
 
-		/* Free the memory that `se` occupies */		
+		/* Free the memory that `se` occupies */
 		free(se);
 
 		/* Do any linking that needs to be done so the list remains continuous */
@@ -86,12 +86,16 @@ static void free_file_storage(struct file_storage_s * fs)
 static void print_help()
 {
 	fputs("Inner Worlds file extractor\n", stdout);
-	fputs("By \"Jamie Breeze\" <jamie.c.breeze@gmail.com> on August 2015\n", stdout);
-	fputs("\tUSAGE: iw-extract [options] <binary_name>\n\n", stdout);
+	fputs("By \"Jamie Breeze\" <jamie.c.breeze@gmail.com> on August 2015\n\n", stdout);
 
-	fputs("-h | --help\tThis help printout\n", stdout);
-	fputs("-o\tOffset of \'file\'\n", stdout);
-	
+	fputs("USAGE: iw-extract [options] <binary_name>\n", stdout);
+	fputs("--help\tThis help printout\n", stdout);
+	fputs("-h\t^\n", stdout);
+	fputs("-o\tOffset of file header\n", stdout);
+	fputs("-c\tOffset of file contents\n", stdout);
+
+	fputc('\n', stdout);
+
 	fflush(stdout);
 }
 
@@ -99,7 +103,7 @@ static void print_help()
 int main(int argc, char **argv)
 {
 	struct file_storage_s file;
-	int file_offset = 37888;		// inner.exe.lst entry offset
+	int file_header_offset = 37888;		// inner.exe.lst entry offset
 	int file_content_offset = 38400;// inner.exe.lst contents offset
 	FILE *fp = 0;
 
@@ -122,27 +126,59 @@ int main(int argc, char **argv)
 				return 0;
 			}
 			else if (!strcmp("-o", argv[i])) {
-				file_offset = 37888;
-				/* TODO: Grab the argv[i+1] as the actual result. */
+				sscanf(argv[i+1], "%d", &file_header_offset);
+				i++;
+			}
+			else if (!strcmp("-c", argv[i])) {
+				sscanf(argv[i+1], "%d", &file_content_offset);
+				i++;
 			}
 		}
 
 		/* Open the binary file, if that fails print an error */
 		fp = fopen(argv[argc-1], "rb");
 		if (!fp) {
-			fprintf(stderr, "ERROR: Failed to open the file \"\"\n", argv[argc-1]);
+			fprintf(stderr, "ERROR: Failed to open the file \"%s\"\n", argv[argc-1]);
 		}
 	}
 
 	/* If we opened the file, do some work in it */
 	if (fp) {
 		/* TODO: do relevant work inside the .EXE */
-		char test[24];
+		FILE *ex_fp = 0;
 
-		fseek(fp, file_offset, SEEK_SET);
-		fread(test, 24, 1, fp);
-		fprintf(stdout, "test =\"%s\"\n", test);
-		
+		/* Jump the the offset we were told to */
+		fseek(fp, file_header_offset, SEEK_SET);
+
+		/* Read in the header */
+		fscanf(fp, " %d", &file.count);
+
+		fscanf(fp, " %d", &file.unknown[0]);
+		fscanf(fp, " %d", &file.unknown[1]);
+
+		fscanf(fp, " %s\n", file.header_filename);
+
+		/* Read in the entries */
+		fseek(fp, file_content_offset, SEEK_SET);
+
+		ex_fp = fopen(file.header_filename, "w");
+
+		if (ex_fp) {
+			for (int i=0; i<file.count; i++)
+			{
+				char entry_name[MAX_NAME_BYTES];
+				int entry_size = 0; // TODO: Is this what this value really is?
+
+				fscanf(fp, " %s\n", entry_name);
+				fscanf(fp, " %d", &entry_size);
+
+				fprintf(ex_fp, "%s %d\n", entry_name, entry_size);
+				fflush(ex_fp);
+			}
+
+			fclose(ex_fp);
+		}
+
 		/* Cleanup everything we did */
 		free_file_storage(&file);
 		fclose(fp);

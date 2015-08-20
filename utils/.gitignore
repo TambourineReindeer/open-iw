@@ -3,3 +3,13 @@ make.bat
 *.sh
 make.sh
 Makefile
+*.exe
+extract.exe
+*.cbp
+*.depend
+*.layout
+*.o
+/[Oo]bj/
+/[Oo]bj/*
+./[Oo]bj/
+./[Oo]bj/*
