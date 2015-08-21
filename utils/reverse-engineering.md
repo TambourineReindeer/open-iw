@@ -21,6 +21,12 @@ Where the 'line' has significant amounts of padding, seemingly for alignment eit
 
 ---
 
+0x2E (ASCII 46 for periods) is used in file path strings for '..' (next directory up). However it seems also to be used for something else, like a separator between menu strings where it has three instances instead of two (see offset 0x76b38).
+
+Another interesting note is what appears to be a variable called "g_ptrs". This may be an array or some object that holds pointers to various other game objects. It is shown in inner.exe.lst as "g_ptrs.bin" and after that at hex 0x76ea4, directly after a list of map files. Afterwards, g_ptrs is separated by blank spaces and several 4-digit hex values (the pattern is broken by a six-digit value further down) separated by several spaces as well. These may be offsets (don't appear to be sizes as they don't match with inner.exe.lst) from the starting position of g_ptrs to somewhere else in the file where these map files are stored.
+
+---
+
 ## Data formats  
 Known data formats so far:    
 

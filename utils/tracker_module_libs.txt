@@ -1,9 +1,0 @@
-for loading tracker modules
-
----c++---
-libdumb
-libmodplug
-libmikmod
-
----java---
-ozmod
