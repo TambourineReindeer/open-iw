@@ -27,11 +27,13 @@ Known data formats so far:
  - LBM [Interleaved Bitmap] (image file) - Internally these are stored as ".bin"  
  - MOD [ProTracker module] (music file)  
  - LST - List of all files included in the executable
+ - CFG - Text document the executable reads and writes from for game configuration
+ - SAV - Inner Worlds save file format; this and the configuration file are the only files that the executable writes out to
 
 File format guesses:  
   
 - ITF [SAPScript Interchange Text Format] (text file)
-- MMP [Truevision Bravado Board Video Output format] (animation format) - There is very little documentation of the format but IW may use this as a video format for whatever reason (this is the only reasonably fitting format found on the internet)  
+- MMP [Truevision Bravado Board Video Output format] (animation format) - There is very little documentation of the format but IW may use this as a video format for whatever reason (this is the only reasonably fitting format found on the internet so far)  
 - REC [?] - Appears to be an audio format associated with the MMP files it includes the same file name as the .mmp; however this could also be the video format and the MMP is the audio
 - MAP [internal map/level format]  
 - EOL - "End of level" - its specific purpose is currently unknown  
@@ -43,6 +45,24 @@ Unknown formats:
  - [audio] - stored internally as ".bin" but may be .wav or some other common audio format; appear to be prefixed with s_*
  - [font] - unknown, also masked as ".bin" but could be .fon, .ttf, or .otf (probably .fon or some other bitmap-based font however)
  - others? - To be seen after browsing file offsets from the .lst file  
+
+---  
+  
+### Known file directories within the exectuable  
+
+ - ../game/
+ - ../game/inner/
+ - ../game/inner/e1
+ - ../game/inner/e2
+ - ../game/inner/e3
+ - ../list/
+ - root directory? (/sleepy/? see below)
+ - directory commands are called from (hence '..')
+ 
+#### Other miscellaneous directories (probably not useful)
+
+ - /dev/mem (Linux physical memory file)
+ - /home/baford/include/sleepy/list (this is one of the developers' Linux home directories, unknown as to why it was included in the file)
 
 ---
 
