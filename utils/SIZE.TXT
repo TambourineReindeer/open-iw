@@ -1,0 +1,2 @@
+   text	   data	    bss	    dec	    hex	filename
+ 538348	 117448	 106728	 762524	  ba29c	..\iw\inner.elf
