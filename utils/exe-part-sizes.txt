@@ -1,0 +1,2 @@
+from UNP:
+EXE part sizes	: header 512 bytes, image 37212 bytes, overlay 17112740 bytes
