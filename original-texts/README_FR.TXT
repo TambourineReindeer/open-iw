@@ -5,22 +5,22 @@
 
 Bienvenue dans l'Univers d'Inner Worlds !
 
-      "L'univers du sorcier" est le premier ‚pisode d'une trilogie de jeux 
-   rassembl‚s dans "Inner Worlds". Cette version complŠte inclut ‚galement
+      "L'univers du sorcier" est le premier épisode d'une trilogie de jeux 
+   rassemblés dans "Inner Worlds". Cette version complète inclut également
    "Un univers de transformation" et "Le centre de l'univers".
 
-  Dans L'univers du sorcier, vous jouez le r“le de Nikita, une belle et
+  Dans L'univers du sorcier, vous jouez le rôle de Nikita, une belle et
 puissante femme de la tribu des guerriers-loups. Votre mission est de
-d‚barrasser la r‚gion de la calamit‚ qui l'accable ... Le Gralob !
+débarrasser la région de la calamité qui l'accable ... Le Gralob !
 
-  L'entraŒnement que Nikita a subi toute sa vie l'a pr‚par‚e pour son destin ... 
+  L'entraînement que Nikita a subi toute sa vie l'a préparée pour son destin ... 
 le combat avec le monstre ... JUSQU'A LA MORT !
 
-  Le chƒteau de Drofanayrb est ‚norme et dangereux, et litt‚ralement infest‚ de
-piŠges et de dangers qui sont autant d'‚preuves pour Nikita. Trouvera-t-elle le
+  Le château de Drofanayrb est énorme et dangereux, et littéralement infesté de
+pièges et de dangers qui sont autant d'épreuves pour Nikita. Trouvera-t-elle le
 Gralob ou bien est-ce lui qui la trouvera le premier ?
 
-  Les aventures commencent sur la route du chƒteau ...
+  Les aventures commencent sur la route du château ...
 
 
   Bonne chance !
