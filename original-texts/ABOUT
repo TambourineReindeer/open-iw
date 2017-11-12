@@ -1,0 +1,91 @@
+Internet Based Software Development
+Copyright 1996 Sleepless Software Inc.
+All Rights Reserved
+ 
+ 
+  	We, the founders of Sleepless Software, had a vision. OK, in retrospect maybe it was more like a hallucination. Anyway, we wanted to make a shareware game and use the profits to build a software development company. 
+
+The company was founded by myself (Joe Hitchens) and my friend Bryan Ford and my brother Ron Hitchens. I have been working in the computer game industry since 1986 as an artist and designer. Bryan is an extraordinarily talented, creative and forward-thinking programmer. 
+
+When we started this company, we were both pretty big Internet junkies so we thought it would be cool to develop the game using the Internet. Also, our long term goal was to develop Internet software such as online, human vs. human, multi-player games (this was before 'www.mycompany.com' was on every TV commercial and when people said, "inter-what?" when you said, "Internet".) 
+
+Our basic plan was to work very hard to develop our first game with little or no pay, use the profits from that game once it was finished as financing for the following project, and then continue the cycle indefinately. 
+
+And so that is exactly what we tried. The game we chose to make is called "Inner Worlds". It is based on a simple design that I came up with in 1986 that was originally intended for the Atari 7800 game console. The game was a fairly straightforward action/adventure, side-scroll, platform game with a main character named "Nikita". Nikita had the ability to transform into a wolf and back at will. In our final design, the character was changed from a male to a female character but her name is still Nikita and she still has the ability to change from human to wolf form. 
+
+Since Sleepless was newly formed and had very little money to invest in such a project we decided to ask potential team members if they would be willing to work on the game in exchange for a deferred royalty share. Linux (a freely distributable Unix-like OS for PC hardware) had just become available and since Linux was cool and free, we were of course using it. So we posted a message to the usenet group "comp.os.linux" announcing our project to the Linux community and asking if anyone would like to help out. 
+
+The response was overwhelming! Hundreds of people responded to the initial posting. I spent about a week doing nothing but trying to respond to the flood of email messages that came in. When the dust settled, we had about 2 dozen team members. 
+
+We chose to cross develop the game on Linux using GCC (because GCC was also free and cool!) with the end product being an MSDOS executable. We intended to release a Linux version of the game also which we may still do. The Linux version exists, is identical to the DOS version and is actually included on the CDROM for the REGISTERED version of the game. 
+
+During development, we leaned very heavily on the following tools: 
+
+    The Inner Worlds mailing list 
+
+    An EMail mailing list that included all team members. When someone sent email to another team member, they included a carbon copy to the mailing list so that the message was actually seen by everyone. 
+
+    CVS 
+
+    The concurrent version system. Used to coalesce modifications made by remote team members and to tag and keep track of distribution versions of the source and development environment. 
+
+    Tar 
+
+    The Unix 'tar' (tape archive) program which was used to package the development system and source code for distribution. 
+
+    PGP 
+
+    The "Pretty Good Privacy" encryption program. Used to secure the source code and data from prying eyes while moving around the Internet. 
+
+    FTP 
+
+    Used to transfer the data and source distributions between team members. 
+
+    Diff 
+
+    Used to detect & extract changes to the game made by remote team members. 
+
+    Patch 
+
+    Used to reapply modifications contained in a 'diff' file to another team members version of the source. 
+
+Some of the problems we had to cope with were time-zone differences, language barriors and organizing and distributing the work so that it could be done in parallel by many different programmers.  Most of the graphics were done by myself using a variety of tools. About 1/4 of the graphics work was done by others.  The sound effects were created by several different individuals and companies in the US and other countries. 
+
+To acquire music for the game, we held an Internet contest! Each of the winning entries was paid $100 and the grand prize winner received $1000. 
+
+Of course, not everything worked out wonderfully. Inner Worlds was supposed to be a 1 year project but it ended up taking 3 years to complete. The main reason for this was that we were trying out too many experimental things on the project in addition to the IDT concept. Few (if any) of us had had any experience trying to develop software in a distributed way like this. Also, I personally knew little about project management and it turns out that this was precisely what I needed to know to make it all work. And of course there were also dozens of other reasons. 
+
+If we had succeeded in getting the game done two years sooner, it would have been outstanding. But even so, it was, in fact finished (which I consider a deeply personal victory) and it was done on a shoestring budget. Inner Worlds also incorporates a number of new and innovative concepts and techniques above and beyond the distributed development: 
+
+    It was almost entirely programmed in C++ with extensive use of the object oriented features of the language. 
+    The graphics engine uses a completely unique non-tiled background system using a custom scrolling engine with 24 layers of parallax scrolling and a floating VGA memory window. 
+    It has it's own custom DOS extender and sound/music driver. 
+
+... and who knows what else I'm forgetting. 
+
+I also know that the things I learned about software development and distributed development teams will be priceless in the future. 
+
+Inner Worlds may or may not be able to finance the next IDT project for Sleepless Software. That remains to be seen. At the time of this writing I am finishing up negotiations for publication of the game via commercial distribution channels which will complement our current shareware distribution. 
+
+All in all, I'm pretty proud of our accomplishment and extremely optimistic about the future of Sleepless and the potential of the IDT. 
+When the game was finished, the Inner Worlds IDT consisted of 24 individuals and companies located in 9 countries and 11 U.S. states and spanning 3 continents. It endured 3 years of development, major career changes for 4 of it's team members, 2 international changes of residence, 5 total changes of address, 10 email address changes, and 2 newborn babies (that I know of). 
+
+j.h. 
+Joe Hitchens 
+December 16, 1996 
+ 
+
+    Addendum:
+
+    Inner Worlds, though at it's core a very good game with a tremendous amount of depth and great gameplay, was, nevertheless, a complete and total failure financially. By the time it was released, the graphics and sound were so out of date that no one really took much notice. Everyone was into first person 3D shooters by that time.
+
+    But on the bright side, the experience I gained was invaluable and almost immediately resulted in my becoming a respected and well paid software engineer. I also learned one whole hell of a lot about myself (lessons which I'll keep to myself, please and thank you).
+
+    And even if the company didn't end up doing online multiplayer games, at least I did. I'm just finishing up an online multiplayer blackjack game that supports up to 600 simultaneous users, makes extensive use of Java, JSP, Database interaction and uses 'real money' user account balances.
+
+    I hope that Inner Worlds was able to benefit some of the other team members in the same way. If any of you are out there, please get in touch with me. My email address hasn't changed.
+
+    Looking back, I have to say that Inner Worlds was a success for me, but not in the way I intended. But then, ain't that just the way life goes?
+
+    j.h.
+    September 19, 2001 
