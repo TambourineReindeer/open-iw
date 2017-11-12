@@ -1,2 +1,8 @@
 /[Ii][Ww]/
 /[Ii][Ww]/*
+/bin/*
+utils/IW/IW.CFG
+utils/IW/IW.ICL
+utils/IW/IW.PIF
+utils/IW/ORDER.TXT
+utils/IW/README.TXT
