@@ -29,9 +29,9 @@ Known data formats so far:
 
 File format guesses:
 
-- ITF [SAPScript Interchange Text Format] (text file)
+- ITF Perhaps an internal text format, with formatting or control indicators such as '\f1' and '\c'. Probably not related to [SAPScript Interchange Text Format]
 - MMP [Truevision Bravado Board Video Output format] (animation format) - There is very little documentation of the format but IW may use this as a video format for whatever reason (this is the only reasonably fitting format found on the internet so far)
-- REC [?] - Appears to be an audio format associated with the MMP files it includes the same file name as the .mmp; however this could also be the video format and the MMP is the audio
+- REC [?] - Appears to be an audio format associated with the MMP files as it includes the same file name as the .mmp; however this could also be the video format and the MMP is the audio
 - MAP [internal map/level format]
 - EOL - "End of level" - its specific purpose is currently unknown
 
