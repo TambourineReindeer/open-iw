@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
 	fstream f;
 	size_t file_header_offset = 37888;	// inner.exe.lst header offset
 	size_t file_list_offset = 38400;	// inner.exe.lst list offset
-	size_t file_content_offset = 0;		// inner.exe.lst contents offset
+	size_t file_content_offset = 48640;		// inner.exe.lst contents offset
 
 	// Process the command line parameters
 	if (argc <= 1) {
