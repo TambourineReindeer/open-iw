@@ -49,7 +49,7 @@ Unknown formats:
  - RM5 - There is only one of these, "castle.rm5"
  - DUMP - A data dump of some sort but as of yet unknown as to its purpose
  - [audio] - stored internally as ".bin" and are raw waveforms stored as 8-bit signed PCM Uncompressed Mono; appear to be prefixed with s_*
- - [font] - unknown, also masked as ".bin" but could be .fon, .ttf, or .otf (probably .fon or some other bitmap-based font however)
+ - [font] - unknown, but probably an internal font format, presumably stored in "fonts.bin" (defines the actual font data?) and "g_fonts2.bin" (the bitmap data for the font)
  - others? - To be seen after browsing file offsets from the .lst file
 
 ---
