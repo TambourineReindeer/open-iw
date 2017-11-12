@@ -1,16 +1,14 @@
 Beginning of packed resources: 37,888 (dec)
 
-It appears that 0x20 (hex) is a padding value and that the ASCI entries of number literals are QWORD aligned (64-bits)
+The packed files header is a simple string padded by spaces (0x20(hex)) where the first value of '504' is the number of files packed into the extender, the second number '1007' is currently unknown while the third number '10137' is the length of the file list in bytes.
 
-String literals are escaped with 0x0A (hex) / 10 (dec) control character as opposed to the C style of using a NULL 0x00 (hex) to end a string.
-
-The first QWORD is an 8-byte ASCI representation of a number that indicates where the "inner.exe.lst" contents begin inside the extended region of the DOS binary file.
-
-In our case (version 1.2) this is a set of four bytes equal to 0x20 and three bytes that equal ASCI "504" and a final 0x20 padding byte before the next QWORD.
+String literals are escaped with 0x0A(hex) which is the line feed code or '\n' control character.
 
 It seems that the first string starting at 38,400(dec) is "inner" and is a stand alone string and not an actual "lst" entry.  The list entries seem to actually begin directly after, and are of the format:
 `<size in bytes> <file name>\n`
 Where the 'line' has significant amounts of padding, seemingly for alignment either in memory or in the text file editor IW's developers used.
+
+It appears the header, file list and each file are aligned somehow in the extender file, it is unclear what alignment is being used, as the final padding looks almost arbitrary.  This leaves significant amounts of trailing 0x00 padding between sections with no clear way to determine how much of it there really is, which inhibits our ability to extract the DOS version of the game files.
 
 ---
 
