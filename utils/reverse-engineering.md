@@ -27,34 +27,34 @@ Another interesting note is what appears to be a variable called "g_ptrs". This 
 
 ---
 
-## Data formats  
-Known data formats so far:    
+## Data formats
+Known data formats so far:
 
- - LBM [Interleaved Bitmap] (image file) - Internally these are stored as ".bin"  
- - MOD [ProTracker module] (music file)  
+ - LBM [Interleaved Bitmap] (image file) - Internally these are stored as ".bin"
+ - MOD [ProTracker module] (music file)
  - LST - List of all files included in the executable
  - CFG - Text document the executable reads and writes from for game configuration
  - SAV - Inner Worlds save file format; this and the configuration file are the only files that the executable writes out to
 
-File format guesses:  
-  
-- ITF [SAPScript Interchange Text Format] (text file)
-- MMP [Truevision Bravado Board Video Output format] (animation format) - There is very little documentation of the format but IW may use this as a video format for whatever reason (this is the only reasonably fitting format found on the internet so far)  
-- REC [?] - Appears to be an audio format associated with the MMP files it includes the same file name as the .mmp; however this could also be the video format and the MMP is the audio
-- MAP [internal map/level format]  
-- EOL - "End of level" - its specific purpose is currently unknown  
+File format guesses:
 
-Unknown formats:  
+- ITF [SAPScript Interchange Text Format] (text file)
+- MMP [Truevision Bravado Board Video Output format] (animation format) - There is very little documentation of the format but IW may use this as a video format for whatever reason (this is the only reasonably fitting format found on the internet so far)
+- REC [?] - Appears to be an audio format associated with the MMP files it includes the same file name as the .mmp; however this could also be the video format and the MMP is the audio
+- MAP [internal map/level format]
+- EOL - "End of level" - its specific purpose is currently unknown
+
+Unknown formats:
 
  - RM5 - There is only one of these, "castle.rm5"
- - DUMP - A data dump of some sort but as of yet unknown as to its purpose  
- - [audio] - stored internally as ".bin" but may be .wav or some other common audio format; appear to be prefixed with s_*
+ - DUMP - A data dump of some sort but as of yet unknown as to its purpose
+ - [audio] - stored internally as ".bin" and are raw waveforms stored as 8-bit signed PCM Uncompressed Mono; appear to be prefixed with s_*
  - [font] - unknown, also masked as ".bin" but could be .fon, .ttf, or .otf (probably .fon or some other bitmap-based font however)
- - others? - To be seen after browsing file offsets from the .lst file  
+ - others? - To be seen after browsing file offsets from the .lst file
 
----  
-  
-### Known file directories within the exectuable  
+---
+
+### Known file directories within the exectuable
 
  - ../game/
  - ../game/inner/
@@ -64,7 +64,7 @@ Unknown formats:
  - ../list/
  - root directory? (/sleepy/? see below)
  - directory commands are called from (hence '..')
- 
+
 #### Other miscellaneous directories (probably not useful)
 
  - /dev/mem (Linux physical memory file)
@@ -72,5 +72,5 @@ Unknown formats:
 
 ---
 
-### Notes on original development 
+### Notes on original development
 The game itself was written in C++ with libc5 and compiled with G++ 2.7.2 and BinUtils 2.6 into DOS and Linux executables. The developers used a custom-built DOS extender called MOSS (available at the University of Utah website) which uses a form of ELF executables and allows the main executable and any other resource files to be attached to it.
